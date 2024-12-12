@@ -1,0 +1,13 @@
+<p>nested-form-array works!</p>
+
+<form [formGroup]="form" (ngSubmit)="onSummit()" >
+    <div formArrayName="contactNos" >
+             <div *ngFor=" let contact of form.controls.contactNos.controls;index as i  " > 
+               <input [formControlName]="i" placeholder="contact no." >
+            </div>
+    </div>
+   <button>summit</button>
+</form>
+
+<button (click)="addContactNo()"  >add new contact no</button>
+<button (click)="setPreset()" >set preset </button>
